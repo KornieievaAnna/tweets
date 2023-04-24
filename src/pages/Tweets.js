@@ -9,11 +9,7 @@ const Tweets = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isFirstRender.current) {
       dispatch(fetchUsers());
-    }
-    isFirstRender.current = false;
-    return;
   }, [dispatch]);
 
   const users = useSelector(getUsers);
@@ -31,7 +27,7 @@ const Tweets = () => {
           }}
         >
           {users.map(user => (
-            <TweetCard key={user.id} user={user} />
+              <TweetCard key={user.id} user={user} />
           ))}
         </ul>
       )}

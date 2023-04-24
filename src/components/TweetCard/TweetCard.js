@@ -18,7 +18,6 @@ import { updateUser } from 'redux/operations';
 const TweetCard = ({ user }) => {
   const dispatch = useDispatch();
   const isFollowing = user.isFollowing;
-  console.log(isFollowing);
 
   const handleСhange = () => {
     dispatch(
@@ -36,7 +35,6 @@ const TweetCard = ({ user }) => {
             }
       )
     );
-    console.log('hfm');
   };
 
   return (
@@ -50,7 +48,7 @@ const TweetCard = ({ user }) => {
       </div>
       <Stats>
         <Text>{user.tweets.toLocaleString('en-US')} tweets</Text>
-        <Text>{user.folloewrs.toLocaleString('en-US')} folloewrs</Text>
+        <Text>{user.followers.toLocaleString('en-US')} followers</Text>
       </Stats>
       <Button
         type="button"
