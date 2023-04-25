@@ -14,34 +14,60 @@ import {
 
 import { useDispatch } from 'react-redux';
 import { updateUser } from 'redux/operations';
-import { useState, useEffect } from 'react';
 
 const TweetCard = ({ user }) => {
-  const [subscription, setSubscription] = useState(user.isFollowing);
-  const [subscriber, setSubscriber] = useState(user.followers);
-
   const dispatch = useDispatch();
-
   const handleСhange = () => {
-    if (subscription) {
-      setSubscriber(subscriber - 1);
-      setSubscription(false);
-    } else {
-      setSubscriber(subscriber + 1);
-      setSubscription(true);
-      // You are following ${user.user}
-    }
+    dispatch(
+      updateUser(
+        user.isFollowing
+          ? {
+              userId: user.id,
+              followers: user.followers - 1,
+              isFollowing: false,
+            }
+          : {
+              userId: user.id,
+              followers: user.followers + 1,
+              isFollowing: true,
+            }
+      )
+    );
   };
 
-  useEffect(() => {
-    dispatch(
-      updateUser({
-        userId: user.id,
-        followers: subscriber,
-        isFollowing: subscription,
-      })
-    );
-  }, [subscription, dispatch, subscriber, user.id]);
+  //   const handleСhange = () => {
+  //   if (subscription === true) {
+  //     setSubscription(false);
+  //     setSubscriber(subscriber - 1);
+  //     console.log('работает с тру');
+  //   } else {
+  //   //   console.log('работает с фолс');
+  //     setSubscriber(subscriber + 1);
+  //     setSubscription(true);
+  //   //   console.log('работает с фолс');
+  //     // You are following ${user.user}
+  //   }
+  //   console.log(subscription);
+  //   dispatch(
+  //     updateUser({
+  //       userId: user.id,
+  //       followers: subscriber,
+  //       isFollowing: subscription,
+  //     })
+  //   );
+  // };
+
+  //   const users = useSelector(getUsers);
+
+  // useEffect(() => {
+  //   dispatch(
+  //     updateUser({
+  //       userId: user.id,
+  //       followers: subscriber,
+  //       isFollowing: subscription,
+  //     })
+  //   );
+  // }, [subscription]);
 
   return (
     <Card>
@@ -54,14 +80,14 @@ const TweetCard = ({ user }) => {
       </div>
       <Stats>
         <Text>{user.tweets.toLocaleString('en-US')} tweets</Text>
-        <Text>{subscriber.toLocaleString('en-US')} followers</Text>
+        <Text>{user.followers.toLocaleString('en-US')} followers</Text>
       </Stats>
       <Button
         type="button"
-        style={{ backgroundColor: subscription && '#5cd3a8' }}
+        style={{ backgroundColor: user.isFollowing && '#5cd3a8' }}
         onClick={handleСhange}
       >
-        {subscription ? <>Following</> : <>Follow</>}
+        {user.isFollowing ? <>Following</> : <>Follow</>}
       </Button>
     </Card>
   );

@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchUsers, updateUser } from './operations';
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: 'tweets',
   initialState: {
-    items: [],
+    users: [],
     isLoading: false,
     error: null,
   },
@@ -15,8 +15,7 @@ const usersSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
-          state.items = action.payload;
-          console.log(action.payload);
+        state.users = action.payload;
         state.isLoading = false;
       })
       .addCase(fetchUsers.rejected, state => {
@@ -26,12 +25,20 @@ const usersSlice = createSlice({
       .addCase(updateUser.pending, state => {
         state.isLoading = true;
       })
-      .addCase(updateUser.fulfilled, (state, action) => {
+      .addCase(updateUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        console.log(action.payload);
-       
+        state.users = state.users.map(user => {
+          if (user.id === payload.id) {
+            return {
+              ...user,
+              followers: payload.followers,
+              isFollowing: payload.isFollowing,
+            };
+          }
+          return user;
+        });
       })
-      .addCase(updateUser.rejected, state => {
+      .addCase(updateUser.rejected, (state, action) => {
         state.error = null;
         state.isLoading = false;
       }),
