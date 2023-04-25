@@ -41,7 +41,7 @@ const TweetCard = ({ user }) => {
         isFollowing: subscription,
       })
     );
-  }, [subscription]);
+  }, [subscription, dispatch, subscriber, user.id]);
 
   return (
     <Card>
