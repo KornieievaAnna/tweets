@@ -14,28 +14,34 @@ import {
 
 import { useDispatch } from 'react-redux';
 import { updateUser } from 'redux/operations';
+import { useState, useEffect } from 'react';
 
 const TweetCard = ({ user }) => {
+  const [subscription, setSubscription] = useState(user.isFollowing);
+  const [subscriber, setSubscriber] = useState(user.followers);
+
   const dispatch = useDispatch();
-  const isFollowing = user.isFollowing;
 
   const handleСhange = () => {
-    dispatch(
-      updateUser(
-        isFollowing
-          ? {
-              userId: user.id,
-              followers: user.followers - 1,
-              isFollowing: false,
-            }
-          : {
-              userId: user.id,
-              followers: user.followers + 1,
-              isFollowing: true,
-            }
-      )
-    );
+    if (subscription) {
+      setSubscriber(subscriber - 1);
+      setSubscription(false);
+    } else {
+      setSubscriber(subscriber + 1);
+      setSubscription(true);
+      // You are following ${user.user}
+    }
   };
+
+  useEffect(() => {
+    dispatch(
+      updateUser({
+        userId: user.id,
+        followers: subscriber,
+        isFollowing: subscription,
+      })
+    );
+  }, [subscription]);
 
   return (
     <Card>
@@ -44,18 +50,18 @@ const TweetCard = ({ user }) => {
       <Band></Band>
       <Сircle></Сircle>
       <div>
-        <Avatar src={user.avatar} alt="avatar" height={62} width={62} />
+        <Avatar src={user.avatar} alt={user.user} height={62} width={62} />
       </div>
       <Stats>
         <Text>{user.tweets.toLocaleString('en-US')} tweets</Text>
-        <Text>{user.followers.toLocaleString('en-US')} followers</Text>
+        <Text>{subscriber.toLocaleString('en-US')} followers</Text>
       </Stats>
       <Button
         type="button"
-        style={{ backgroundColor: isFollowing && '#5cd3a8' }}
+        style={{ backgroundColor: subscription && '#5cd3a8' }}
         onClick={handleСhange}
       >
-        {isFollowing ? <>Following</> : <>Follow</>}
+        {subscription ? <>Following</> : <>Follow</>}
       </Button>
     </Card>
   );

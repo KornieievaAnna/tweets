@@ -15,7 +15,8 @@ const usersSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
-        state.items = action.payload;
+          state.items = action.payload;
+          console.log(action.payload);
         state.isLoading = false;
       })
       .addCase(fetchUsers.rejected, state => {
@@ -25,18 +26,10 @@ const usersSlice = createSlice({
       .addCase(updateUser.pending, state => {
         state.isLoading = true;
       })
-      .addCase(updateUser.fulfilled, (state, { payload }) => {
+      .addCase(updateUser.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.users = state.users.map(user => {
-          if (user.id === payload.id) {
-            return {
-              ...user,
-              followers: payload.followers,
-              isFollowing: payload.isFollowing,
-            };
-          }
-          return user;
-        });
+        console.log(action.payload);
+       
       })
       .addCase(updateUser.rejected, state => {
         state.error = null;
