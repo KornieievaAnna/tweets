@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/266.556ff896.chunk.js","mappings":"wHAMA,UANa,WACX,OACE,mCAEH,C","sources":["pages/Home.js"],"sourcesContent":["const Home = () => {\n  return (\n    <div>Hellow</div>\n  );\n};\n\nexport default Home;\n"],"names":[],"sourceRoot":""}
