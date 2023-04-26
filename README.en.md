@@ -16,27 +16,33 @@ the "Load more" button
 
 ## Successful "follow"
 
-After clicking on the "Follow" button, the button text will change to "Subscribe" and the background color will change to green..
+After clicking on the "Follow" button, the button text will change to
+"Subscribe" and the background color will change to green.
 ![Step 4](./assets/following.png)
 
-You will also receive a notification that you are following a user with the corresponding username. The notification will be located in the upper right corner of the screen.
+You will also receive a notification that you are following a user with the
+corresponding username. The notification will be located in the upper right
+corner of the screen.
 
 ![Step 5](./assets/notification.png)
 
 ### Control your follow
 
 You can manage your subscription using the buttons:
-    - "Show all" button to display all possible cards of people;
-    - Follow button to display all cards of people you don't follow.
-    - "Subscriptions" button to display all the cards of the people you follow.
-![Step 6](./assets/control.png)
 
-### Control your follow
+- "Show all" button to display all possible cards of people;
+- Follow button to display all cards of people you don't follow.
+- "Subscriptions" button to display all the cards of the people you follow.
+  ![Step 6](./assets/control.png)
 
-You can manage your subscription using the buttons:
-    - "Show all" button to display all possible cards of people;
-    - Follow button to display all cards of people you don't follow.
-    - "Subscriptions" button to display all the cards of the people you follow.
-![Step 6](./assets/control.png)
+### Stop following
 
+To stop following the user you need click on the "following" button. After that,
+the quantity of followers this user will decrease by one, the background of the
+button will change gray and the inscription will change to "Follow".
 
+You will also receive a notification that you are not following a user anymore
+with a matching username. The notification will be located in the upper right
+corner of the screen.
+
+![Step 7](./assets/stopfollowing.png)
