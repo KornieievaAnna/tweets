@@ -46,3 +46,9 @@ with a matching username. The notification will be located in the upper right
 corner of the screen.
 
 ![Step 7](./assets/stopfollowing.png)
+
+### Return to Home page
+
+To return to the Home page, you  need to click on the "Go back" button located in the upper left corner of the screen.
+
+![Step 8](./assets/goback.png)
