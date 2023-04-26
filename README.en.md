@@ -23,54 +23,20 @@ You will also receive a notification that you are following a user with the corr
 
 ![Step 5](./assets/notification.png)
 
-### Deployment status
+### Control your follow
 
-The deployment status of the latest commit is displayed with an icon next to its
-ID.
+You can manage your subscription using the buttons:
+    - "Show all" button to display all possible cards of people;
+    - Follow button to display all cards of people you don't follow.
+    - "Subscriptions" button to display all the cards of the people you follow.
+![Step 6](./assets/control.png)
 
-- **Yellow color** - the project is being built and deployed.
-- **Green color** - deployment completed successfully.
-- **Red color** - an error occurred during linting, build or deployment.
+### Control your follow
 
-More detailed information about the status can be viewed by clicking on the
-icon, and in the drop-down window, follow the link `Details`.
+You can manage your subscription using the buttons:
+    - "Show all" button to display all possible cards of people;
+    - Follow button to display all cards of people you don't follow.
+    - "Subscriptions" button to display all the cards of the people you follow.
+![Step 6](./assets/control.png)
 
-![Deployment status](./assets/deploy-status.png)
 
-### Live page
-
-After some time, usually a couple of minutes, the live page can be viewed at the
-address specified in the edited `homepage` property. For example, here is a link
-to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
-`package.json` file.
-
-### Routing
-
-If your application uses the `react-router-dom` library for routing, you must
-additionally configure the `<BrowserRouter>` component by passing the exact name
-of your repository in the `basename` prop. Slashes at the beginning and end of
-the line are required.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## How it works
-
-![How it works](./assets/how-it-works.png)
-
-1. After each push to the `main` branch of the GitHub repository, a special
-   script (GitHub Action) is launched from the `.github/workflows/deploy.yml`
-   file.
-2. All repository files are copied to the server, where the project is
-   initialized and linted and built before deployment.
-3. If all steps are successful, the built production version of the project
-   files is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
