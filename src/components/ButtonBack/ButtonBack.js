@@ -3,7 +3,7 @@ import { GlowingBtn } from '../Layout/Layout.styled';
 
 const ButtonBack = () => {
   return (
-    <div>
+    <div style={{ justifyContent: 'flex-start', display: 'flex' }}>
       <Link to="/">
         <GlowingBtn>Go back</GlowingBtn>
       </Link>

@@ -6,7 +6,7 @@ import { GlowingBtn } from './Layout.styled';
 const Layout = () => {
   return (
     <div>
-      <header>
+      <header style={{ justifyContent: 'center', display: 'flex' }}>
         <NavLink to="/">
           <GlowingBtn>Home</GlowingBtn>
         </NavLink>

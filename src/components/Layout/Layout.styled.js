@@ -4,10 +4,13 @@ export const GlowingBtn = styled.button`
   padding: 10px 30px;
   background-color: #c7b9e8;
   color: #9078c6;
-  font-weight: bold;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+ 
   border: solid;
   border-radius: 5px;
-  letter-spacing: 4px;
   overflow: hidden;
   transition: 0.5s;
   cursor: pointer;

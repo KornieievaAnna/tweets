@@ -14,6 +14,11 @@ export const Card = styled.li`
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  &:hover {
+    box-shadow: 0 0 2px #f0ecfa, 0 0 4px #f0ecfa, 0 0 6px #f0ecfa,
+      0 0 15px #f0ecfa;
+    // border-radius: 3px;
+  }
 `;
 
 export const Logo = styled.img`

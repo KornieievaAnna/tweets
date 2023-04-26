@@ -8,24 +8,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #cabbec;
 }
 
+/* #cabbec */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-/* .link {
-  text-decoration: none;
-} */
 
-/* a {
+a {
   text-decoration: none;
-} */
-/* 
+}
+
 ul {
   list-style: none;
-} */
+  padding: 0px;
+  margin: 0px;
+}
 
 
 p {
