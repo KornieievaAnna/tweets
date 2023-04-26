@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom';
-import { GlowingBtn } from '../Layout/Layout.styled';
+import { Btn } from '../Btn.styled';
 
 const ButtonBack = () => {
   return (
-    <div style={{ justifyContent: 'flex-start', display: 'flex' }}>
       <Link to="/">
-        <GlowingBtn>Go back</GlowingBtn>
+        <Btn>Go back</Btn>
       </Link>
-    </div>
   );
 };
 export default ButtonBack;

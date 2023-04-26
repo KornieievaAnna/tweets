@@ -13,7 +13,8 @@ import {
 } from './TweetCard.styled';
 
 import { useDispatch } from 'react-redux';
-import { updateUser } from 'redux/operations';
+import { updateUser } from 'redux/user/operations';
+import Notiflix from 'notiflix';
 
 const TweetCard = ({ user }) => {
   const dispatch = useDispatch();
@@ -33,41 +34,12 @@ const TweetCard = ({ user }) => {
             }
       )
     );
+    if (!user.isFollowing) {
+      Notiflix.Notify.info(`You are following ${user.user}`);
+    } else {
+      Notiflix.Notify.warning(`You aren't following ${user.user} anymore`);
+    }
   };
-
-  //   const handleСhange = () => {
-  //   if (subscription === true) {
-  //     setSubscription(false);
-  //     setSubscriber(subscriber - 1);
-  //     console.log('работает с тру');
-  //   } else {
-  //   //   console.log('работает с фолс');
-  //     setSubscriber(subscriber + 1);
-  //     setSubscription(true);
-  //   //   console.log('работает с фолс');
-  //     // You are following ${user.user}
-  //   }
-  //   console.log(subscription);
-  //   dispatch(
-  //     updateUser({
-  //       userId: user.id,
-  //       followers: subscriber,
-  //       isFollowing: subscription,
-  //     })
-  //   );
-  // };
-
-  //   const users = useSelector(getUsers);
-
-  // useEffect(() => {
-  //   dispatch(
-  //     updateUser({
-  //       userId: user.id,
-  //       followers: subscriber,
-  //       isFollowing: subscription,
-  //     })
-  //   );
-  // }, [subscription]);
 
   return (
     <Card>

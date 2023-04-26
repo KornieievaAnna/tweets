@@ -1,10 +1,10 @@
-import { GlowingBtn } from '../Layout/Layout.styled';
+import { Btn } from '../Btn.styled';
 
 export function ButtonLoadMore({ loadMore }) {
   return (
-    <GlowingBtn type="button" onClick={loadMore}>
+    <Btn type="button" onClick={loadMore}>
       Load more
-    </GlowingBtn>
+    </Btn>
   );
 }
 

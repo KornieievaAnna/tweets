@@ -5,10 +5,10 @@ export const GlowingBtn = styled.button`
   background-color: #c7b9e8;
   color: #9078c6;
   font-family: 'Montserrat';
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   line-height: 20px;
- 
+
   border: solid;
   border-radius: 5px;
   overflow: hidden;
@@ -22,4 +22,9 @@ export const GlowingBtn = styled.button`
       0 0 70px #9078c6;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
   }
+`;
+
+export const Header = styled.header`
+  justify-content: center;
+  display: flex;
 `;

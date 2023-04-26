@@ -1,25 +1,26 @@
 import { useDispatch } from 'react-redux';
-import { filterContact } from '../../redux/filterSlice';
-import { GlowingBtn } from '../Layout/Layout.styled';
+import { filterUsers } from '../../redux/filter/filterSlice';
+import { Btn } from '../Btn.styled';
 
 const Filters = () => {
   const dispatch = useDispatch();
 
   const handleFilter = filter => {
-    dispatch(filterContact(filter));
+    dispatch(filterUsers(filter));
+    
   };
 
   return (
     <div>
-      <GlowingBtn type="button" onClick={() => handleFilter('all')}>
+      <Btn type="button" onClick={() => handleFilter('all')}>
         Show All
-      </GlowingBtn>
-      <GlowingBtn type="button" onClick={() => handleFilter('follow')}>
+      </Btn>
+      <Btn type="button" onClick={() => handleFilter('follow')}>
         Follow
-      </GlowingBtn>
-      <GlowingBtn type="button" onClick={() => handleFilter('following')}>
+      </Btn>
+      <Btn type="button" onClick={() => handleFilter('following')}>
         Following
-      </GlowingBtn>
+      </Btn>
     </div>
   );
 };
