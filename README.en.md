@@ -4,30 +4,15 @@ This application is designed for those who want to track the tweets of people
 they are interested in.
 
 In order to find interesting people and start tracking their tweets, you need to
-click on the "Tweets" button on the Home page.
-![Step 1](./assets/hellow.png) 
+click on the "Tweets" button on the Home page. ![Step 1](./assets/hellow.png)
 
+## To start following
 
+Choose the person you are interested in from the list. To expand the list, click
+the "Load more" button
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
-
-![Creating repo from a template step 2](./assets/template-step-2.png)
-
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
-
-## Подготовка к работе
-
-1. Make sure you have an LTS version of Node.js installed on your computer.
-   [Download and install](https://nodejs.org/en/) if needed.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command.
-4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
-   page will automatically reload after saving changes to the project files.
+![Step 2](./assets/loadmore.png) and click "Follow".
+![Step 3](./assets/hellow.png)
 
 ## Deploy
 
