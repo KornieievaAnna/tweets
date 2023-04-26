@@ -31,9 +31,13 @@ corner of the screen.
 You can manage your subscription using the buttons:
 
 - "Show all" button to display all possible cards of people;
-- Follow button to display all cards of people you don't follow.
-- "Subscriptions" button to display all the cards of the people you follow.
+- "Follow" button to display all cards of people you don't follow.
+- "Following" button to display all the cards of the people you follow.
   ![Step 6](./assets/control.png)
+
+  If you are not following any user, after clicking on the "Following " button, located in the upper right corner of the screen, you will see the inscription "There is nothing here." 
+
+  ![Step 6.1](./assets/empty.png)
 
 ### Stop following
 
