@@ -17,7 +17,7 @@ the "Load more" button
 ## Successful "follow"
 
 After clicking on the "Follow" button, the button text will change to
-"Subscribe" and the background color will change to green.
+"Subscribe", the background color will change to green and the quantity of followers this user will increase by one.
 ![Step 4](./assets/following.png)
 
 You will also receive a notification that you are following a user with the
